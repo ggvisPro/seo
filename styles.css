@@ -1,0 +1,162 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #1cc88a;
+    --dark-color: #5a5c69;
+    --light-color: #f8f9fc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fc;
+    color: #333;
+}
+
+.container-fluid {
+    max-width: 1500px;
+    padding: 20px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+/* 配置面板样式 */
+.config-panel .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.config-panel .card-header {
+    background-color: var(--primary-color);
+    padding: 15px;
+}
+
+.config-panel .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.config-panel .card-body {
+    padding: 20px;
+}
+
+/* 输出面板样式 */
+.output-panel .card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.output-panel .card-header {
+    background-color: var(--secondary-color);
+    padding: 15px;
+}
+
+.output-panel .card-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.output-content {
+    min-height: 500px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.initial-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 300px;
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #375bd2;
+    border-color: #375bd2;
+    transform: translateY(-2px);
+}
+
+#generateBtn {
+    font-weight: 600;
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+/* 输出内容样式 */
+#outputContent {
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+#outputContent h1, 
+#outputContent h2, 
+#outputContent h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+#outputContent p {
+    margin-bottom: 1rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .config-panel,
+    .output-panel {
+        margin-bottom: 20px;
+    }
+    
+    .output-content {
+        max-height: 50vh;
+    }
+}
+
+/* 加载动画 */
+#loadingIndicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 打字机效果 */
+.typewriter-text {
+    border-right: 2px solid var(--primary-color);
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        border-right-color: transparent;
+    }
+    50% {
+        border-right-color: var(--primary-color);
+    }
+    100% {
+        border-right-color: transparent;
+    }
+}
